@@ -1,0 +1,18 @@
+# Local Postgres for the FX rates pipeline.
+services:
+  postgres:
+    image: postgres:16
+    container_name: fx_rates_postgres
+    environment:
+      POSTGRES_USER: fx_user
+      POSTGRES_PASSWORD: fx_password
+      POSTGRES_DB: fx_rates
+    ports:
+      - "5432:5432"
+    volumes:
+      - fx_rates_pgdata:/var/lib/postgresql/data
+      # init scripts run only on first launch with an empty data dir
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+volumes:
+  fx_rates_pgdata:
