@@ -10,7 +10,6 @@ services:
       - "5432:5432"
     volumes:
       - fx_rates_pgdata:/var/lib/postgresql/data
-      # init scripts run only on first launch with an empty data dir
       - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
 
 volumes:

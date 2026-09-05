@@ -1,4 +1,4 @@
-"""Extract step: fetch raw FX rates from the NBP Web API (table A)."""
+"""Fetch raw FX rates from the NBP Web API (table A)."""
 
 from datetime import date, timedelta
 
