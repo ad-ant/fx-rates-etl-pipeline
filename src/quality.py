@@ -6,7 +6,7 @@ import pandas as pd
 CURRENCY_CODE_PATTERN = re.compile(r"^[A-Z]{3}$")
 MIN_CURRENCIES_PER_DAY = 20
 
-CRITICAL_COLUMNS = ["effective_date", "currency_code", "mid_rate"]
+CRITICAL_COLUMNS = ["effective_date", "currency_code", "currency_name", "mid_rate"]
 KEY_COLUMNS = ["effective_date", "currency_code"]
 
 
