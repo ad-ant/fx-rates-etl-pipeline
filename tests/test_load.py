@@ -10,9 +10,8 @@ from src.load import upsert_rates
 @pytest.fixture
 def conn():
     conn = get_connection()
-    with conn.cursor() as cur:
-        cur.execute("truncate table exchange_rates")
-    conn.commit()
+    # temp table shadows the real one for this connection only
+    conn.execute("create temp table exchange_rates (like exchange_rates including all)")
     yield conn
     conn.close()
 
