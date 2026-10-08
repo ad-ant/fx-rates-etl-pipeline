@@ -3,3 +3,4 @@ pandas==3.0.6
 pytest==9.1.1
 psycopg[binary]==3.3.6
 prefect==3.8.8
+jupyter==1.1.1
